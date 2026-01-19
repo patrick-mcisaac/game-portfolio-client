@@ -5,11 +5,11 @@ import MobileMenu from "./mobileMenu"
 
 export default function Navbar() {
     return (
-        <nav>
+        <nav className="absolute z-1 w-screen">
             <ul
-                className={`hidden h-30 items-center gap-20 pl-10 text-4xl font-semibold tracking-wider md:flex`}
+                className={`hidden h-30 items-center gap-20 text-4xl font-semibold tracking-wider md:flex md:justify-center lg:justify-start lg:pl-10`}
             >
-                <Link href={"/"}>
+                <Link href={"/about"}>
                     <li>About</li>
                 </Link>
                 <Link href={""}>

@@ -7,30 +7,30 @@ import { useState } from "react"
 export default function MobileMenu() {
     const [isVisible, setIsVisible] = useState<boolean>(false)
     return isVisible ?
-            <ul className="flex flex-col md:hidden items-center text-center tracking-wider font-semibold text-2xl">
-                <Link href={"/"}>
-                    <li className="h-20 w-screen flex items-center justify-center bg-amber-600">
+            <ul className="z-1 flex w-screen flex-col items-center text-center text-2xl font-semibold tracking-wider md:hidden">
+                <Link href={"/about"}>
+                    <li className="flex h-20 w-screen items-center justify-center bg-amber-600">
                         About
                     </li>
                 </Link>
                 <Link href={""}>
-                    <li className="h-20 w-screen flex items-center justify-center">
+                    <li className="flex h-20 w-screen items-center justify-center bg-black">
                         Games
                     </li>
                 </Link>
                 <Link href={""}>
-                    <li className="h-20 w-screen flex items-center justify-center">
+                    <li className="flex h-20 w-screen items-center justify-center bg-black">
                         Contact
                     </li>
                 </Link>
                 <li
                     onClick={() => setIsVisible(false)}
-                    className="h-20 w-screen hover:cursor-pointer flex items-center justify-center"
+                    className="flex h-20 w-screen items-center justify-center bg-black hover:cursor-pointer"
                 >
                     <FontAwesomeIcon icon={faX} />
                 </li>
             </ul>
-        :   <div className="text-4xl md:hidden flex justify-end p-5">
+        :   <div className="flex justify-end p-5 text-4xl md:hidden">
                 <button onClick={() => setIsVisible(true)}>
                     <FontAwesomeIcon icon={faBars} />
                 </button>
