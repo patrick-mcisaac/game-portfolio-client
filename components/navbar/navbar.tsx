@@ -21,9 +21,9 @@ export default function Navbar() {
     return (
         <nav className="absolute z-1 w-screen">
             <ul
-                className={`hidden h-30 w-full items-center gap-20 text-4xl font-semibold tracking-wider md:flex md:justify-center lg:justify-start`}
+                className={`md: hidden h-30 w-full items-center font-semibold tracking-wider md:flex md:justify-center md:gap-10 md:text-3xl lg:gap-20 lg:text-4xl xl:justify-start`}
             >
-                <Link className="" href={"/"}>
+                <Link className="shrink-0" href={"/"}>
                     <li>
                         <Logo
                             svg={isGames ? only_game : only_dev}
@@ -32,7 +32,7 @@ export default function Navbar() {
                         />
                     </li>
                 </Link>
-                <Link className="-ml-15" href={"/about"}>
+                <Link className="md:-ml-10 lg:-ml-15" href={"/about"}>
                     <li>About</li>
                 </Link>
                 <Link href={"/games"}>
@@ -41,12 +41,12 @@ export default function Navbar() {
                 <Link href={"/websites"}>
                     <li>Websites</li>
                 </Link>
-                <Link className="mr-20 ml-auto" href={"/contact"}>
+                <Link className="mr-20 xl:ml-auto" href={"/contact"}>
                     <li>Contact</li>
                 </Link>
             </ul>
             {/* Hamburger Menu */}
-            <MobileMenu />
+            <MobileMenu isGames={isGames} />
         </nav>
     )
 }

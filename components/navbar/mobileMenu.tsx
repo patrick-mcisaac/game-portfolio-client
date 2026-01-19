@@ -3,8 +3,14 @@ import { faBars, faX } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Link from "next/link"
 import { useState } from "react"
+import Logo from "../logo/Logo"
+import only_game from "../../public/svg/only_game.svg"
+import only_dev from "../../public/svg/only_dev.svg"
 
-export default function MobileMenu() {
+type MobileMenuProps = {
+    isGames: boolean
+}
+export default function MobileMenu({ isGames }: MobileMenuProps) {
     const [isVisible, setIsVisible] = useState<boolean>(false)
     return isVisible ?
             <ul className="flex w-screen flex-col items-center text-center text-2xl font-semibold tracking-wider md:hidden">
@@ -35,7 +41,14 @@ export default function MobileMenu() {
                     <FontAwesomeIcon icon={faX} />
                 </li>
             </ul>
-        :   <div className="flex justify-end p-5 text-4xl md:hidden">
+        :   <div className="flex justify-between p-5 text-4xl md:hidden">
+                <Link className="" href={"/"}>
+                    <Logo
+                        svg={isGames ? only_game : only_dev}
+                        className=""
+                        width={100}
+                    />
+                </Link>
                 <button onClick={() => setIsVisible(true)}>
                     <FontAwesomeIcon icon={faBars} />
                 </button>
