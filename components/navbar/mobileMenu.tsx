@@ -7,18 +7,18 @@ import { useState } from "react"
 export default function MobileMenu() {
     const [isVisible, setIsVisible] = useState<boolean>(false)
     return isVisible ?
-            <ul className="z-1 flex w-screen flex-col items-center text-center text-2xl font-semibold tracking-wider md:hidden">
+            <ul className="flex w-screen flex-col items-center text-center text-2xl font-semibold tracking-wider md:hidden">
                 <Link href={"/about"}>
                     <li className="flex h-20 w-screen items-center justify-center bg-amber-600">
                         About
                     </li>
                 </Link>
-                <Link href={""}>
+                <Link href={"/games"}>
                     <li className="flex h-20 w-screen items-center justify-center bg-black">
                         Games
                     </li>
                 </Link>
-                <Link href={""}>
+                <Link href={"/contact"}>
                     <li className="flex h-20 w-screen items-center justify-center bg-black">
                         Contact
                     </li>
