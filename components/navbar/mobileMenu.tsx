@@ -18,6 +18,11 @@ export default function MobileMenu() {
                         Games
                     </li>
                 </Link>
+                <Link href={"/websites"}>
+                    <li className="flex h-20 w-screen items-center justify-center bg-black">
+                        Websites
+                    </li>
+                </Link>
                 <Link href={"/contact"}>
                     <li className="flex h-20 w-screen items-center justify-center bg-black">
                         Contact
