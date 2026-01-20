@@ -12,9 +12,9 @@ type MobileMenuProps = {
 export default function MobileMenu({ isGames }: MobileMenuProps) {
     const [isVisible, setIsVisible] = useState<boolean>(false)
     return isVisible ?
-            <ul className="flex w-screen flex-col items-center text-center text-2xl font-semibold tracking-wider md:hidden">
+            <ul className="bg-background flex w-screen flex-col items-center text-center text-2xl font-semibold tracking-wider md:hidden">
                 <Link className="" href={"/"}>
-                    <li className="flex h-20 w-screen items-center justify-center bg-black">
+                    <li className="flex h-20 w-screen items-center justify-center">
                         <Logo
                             svg={isGames ? only_game : only_dev}
                             className=""
@@ -23,28 +23,28 @@ export default function MobileMenu({ isGames }: MobileMenuProps) {
                     </li>
                 </Link>
                 <Link href={"/about"}>
-                    <li className="flex h-20 w-screen items-center justify-center bg-amber-600">
+                    <li className="flex h-20 w-screen items-center justify-center">
                         About
                     </li>
                 </Link>
                 <Link href={"/games"}>
-                    <li className="flex h-20 w-screen items-center justify-center bg-black">
+                    <li className="flex h-20 w-screen items-center justify-center">
                         Games
                     </li>
                 </Link>
                 <Link href={"/websites"}>
-                    <li className="flex h-20 w-screen items-center justify-center bg-black">
+                    <li className="flex h-20 w-screen items-center justify-center">
                         Websites
                     </li>
                 </Link>
                 <Link href={"/contact"}>
-                    <li className="flex h-20 w-screen items-center justify-center bg-black">
+                    <li className="flex h-20 w-screen items-center justify-center">
                         Contact
                     </li>
                 </Link>
                 <li
                     onClick={() => setIsVisible(false)}
-                    className="flex h-20 w-screen items-center justify-center bg-black hover:cursor-pointer"
+                    className="flex h-20 w-screen items-center justify-center hover:cursor-pointer"
                 >
                     <FontAwesomeIcon icon={faX} />
                 </li>

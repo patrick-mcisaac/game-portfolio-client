@@ -22,7 +22,7 @@ export default function Navbar() {
                 isGames={isGames}
                 only_dev={only_dev}
                 only_game={only_game}
-                classNameUl="md: hidden h-30 w-full items-center font-semibold tracking-wider md:flex md:justify-center md:gap-10 md:text-3xl lg:gap-20 lg:text-4xl xl:justify-start"
+                classNameUl="md: hidden bg-background h-30 w-full items-center font-semibold tracking-wider md:flex md:justify-center md:gap-10 md:text-3xl lg:gap-20 lg:text-4xl xl:justify-start"
             />
 
             <MobileMenu isGames={isGames} />

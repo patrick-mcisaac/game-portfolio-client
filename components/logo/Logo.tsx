@@ -10,6 +10,12 @@ type LogoProps = {
 
 export default function Logo({ svg, className, width }: LogoProps) {
     return (
-        <Image src={svg} alt="logo" width={width} className={`${className}`} />
+        <Image
+            loading="eager"
+            src={svg}
+            alt="logo"
+            width={width}
+            className={`${className}`}
+        />
     )
 }
