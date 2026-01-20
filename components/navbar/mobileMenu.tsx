@@ -1,4 +1,3 @@
-"use client"
 import { faBars, faX } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Link from "next/link"
@@ -14,6 +13,15 @@ export default function MobileMenu({ isGames }: MobileMenuProps) {
     const [isVisible, setIsVisible] = useState<boolean>(false)
     return isVisible ?
             <ul className="flex w-screen flex-col items-center text-center text-2xl font-semibold tracking-wider md:hidden">
+                <Link className="" href={"/"}>
+                    <li className="flex h-20 w-screen items-center justify-center bg-black">
+                        <Logo
+                            svg={isGames ? only_game : only_dev}
+                            className=""
+                            width={100}
+                        />
+                    </li>
+                </Link>
                 <Link href={"/about"}>
                     <li className="flex h-20 w-screen items-center justify-center bg-amber-600">
                         About
