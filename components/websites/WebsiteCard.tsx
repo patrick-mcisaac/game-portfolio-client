@@ -4,20 +4,36 @@ import Image from "next/image"
 import { useRouter } from "next/navigation"
 
 type Props = {
-    website: WebsiteTypes
+    website?: WebsiteTypes
+    alt: string
+    src: string
+    width: number
+    height: number
+    className?: string
 }
-export default function WebsiteCard({ website }: Props) {
+export default function WebsiteCard({
+    website,
+    alt,
+    src,
+    width,
+    height,
+    className
+}: Props) {
     const router = useRouter()
     return (
-        <Image
-            src={`/api${website.images[0].image}`}
-            alt="website image"
-            width={500}
-            height={100}
-            className="cursor-pointer rounded-2xl transition hover:scale-110"
-            onClick={() => {
-                router.push(`websites/${website.id}`)
-            }}
-        />
+        <div>
+            <Image
+                src={`/api${src}`}
+                alt={alt}
+                width={width}
+                height={height}
+                className={`${className}`}
+                onClick={() => {
+                    if (website) {
+                        router.push(`websites/${website.id}`)
+                    }
+                }}
+            />
+        </div>
     )
 }

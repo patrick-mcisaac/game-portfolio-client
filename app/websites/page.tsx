@@ -18,7 +18,17 @@ export default function Website() {
                 </h1>
                 <div>
                     {websites.map((w: WebsiteTypes) => (
-                        <WebsiteCard key={w.id} website={w} />
+                        <WebsiteCard
+                            key={w.id}
+                            website={w}
+                            src={w.images[0].image}
+                            alt="website image"
+                            width={900}
+                            height={500}
+                            className={
+                                "cursor-pointer rounded-2xl transition hover:scale-110"
+                            }
+                        />
                     ))}
                 </div>
             </div>
