@@ -3,7 +3,7 @@
 import { getDeveloperInfo } from "@/data/developerRequests"
 import { useQuery } from "@tanstack/react-query"
 
-export default function Page() {
+export default function About() {
     const { data: dev, isSuccess } = useQuery({
         queryKey: ["developer"],
         queryFn: () => getDeveloperInfo()
