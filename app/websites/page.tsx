@@ -21,7 +21,7 @@ export default function Website() {
                         <WebsiteCard
                             key={w.id}
                             website={w}
-                            src={w.images[0].image}
+                            src={w.images[0]?.image || null}
                             alt="website image"
                             width={900}
                             height={500}

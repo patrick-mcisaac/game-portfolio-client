@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation"
 type Props = {
     website?: WebsiteTypes
     alt: string
-    src: string
+    src: string | null
     width: number
     height: number
     className?: string
@@ -21,19 +21,24 @@ export default function WebsiteCard({
 }: Props) {
     const router = useRouter()
     return (
-        <div>
-            <Image
-                src={`/api${src}`}
-                alt={alt}
-                width={width}
-                height={height}
-                className={`${className}`}
-                onClick={() => {
-                    if (website) {
-                        router.push(`websites/${website.id}`)
-                    }
-                }}
-            />
+        <div className="w-200 flex-1">
+            <h1 className="text-center text-3xl font-semibold tracking-wider">
+                {website?.title}
+            </h1>
+            {src ?
+                <Image
+                    src={`/api${src}`}
+                    alt={alt}
+                    width={width}
+                    height={height}
+                    className={`${className}`}
+                    onClick={() => {
+                        if (website) {
+                            router.push(`websites/${website.id}`)
+                        }
+                    }}
+                />
+            :   ""}
         </div>
     )
 }
